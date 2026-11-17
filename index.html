@@ -13,13 +13,6 @@ body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle 
 .logo{font-family:Orbitron;font-weight:700}
 .logo span{color:#00e5ff}
 .logo b{color:#a855f7}
-#welcome{position:fixed;inset:0;z-index:100;background:#020617f2;display:flex;align-items:center;justify-content:center;padding:20px}
-.wbox{max-width:520px;width:100%;text-align:center;background:linear-gradient(180deg,#0f172a,#020617);border:1px solid #00e5ff44;padding:32px 22px;border-radius:28px}
-.wbox h1{font-size:42px;line-height:1.1}
-.wbox h1 span{color:#00e5ff}
-.wbox p{color:#94a3b8;line-height:1.9;margin:14px 0}
-.wbox input{width:100%;padding:15px;border-radius:14px;border:1px solid #334155;background:#020617;color:#fff;font-size:18px;text-align:center;outline:none;margin:12px 0}
-.wbtn{width:100%;padding:15px;border:0;border-radius:14px;background:linear-gradient(90deg,#00e5ff,#a855f7);color:#fff;font-weight:900;font-size:19px;cursor:pointer}
 .hero{max-width:1050px;margin:22px auto;padding:0 14px}
 .hero-card{background:linear-gradient(135deg,#0f172a,#1e1b4b 60%,#0f172a);border:1px solid #334155;border-radius:28px;padding:28px 22px}
 .hello{color:#00e5ff;font-weight:900;font-size:18px}
@@ -62,19 +55,6 @@ code{background:#000;padding:4px 10px;border-radius:8px;color:#00e5ff;direction:
 </head>
 <body>
 
-<div id="welcome">
-  <div class="wbox">
-    <div style="font-size:50px">🛡️</div>
-    <h1>أهلاً بيك في <span>المحترف</span></h1>
-    <h2 style="color:#a855f7">EL-MOHTARIF CYBER ACADEMY</h2>
-    <p>أنا مش موقع كورسات عادي.<br>أنا <b style="color:#fff">أكاديمية أمن سيبراني كاملة</b> هتاخدك من صفر لـ وحش سايبر في 90 يوم.<br>هتتعلم تخترق قانوني، وتحمي، وتشتغل وتكسب فلوس بجد.</p>
-    <p style="color:#00e5ff;font-weight:900">اكتب اسمك عشان أرحب بيك صح 👇</p>
-    <input id="nameInput" placeholder="اكتب اسمك هنا... مثلا: محمد" maxlength="30">
-    <button class="wbtn" onclick="startMe()">🚀 ابدأ الرحلة يا محترف</button>
-    <div style="font-size:13px;color:#64748b;margin-top:12px">اسمك هيتحفظ على جهازك بس</div>
-  </div>
-</div>
-
 <div class="top">
   <div class="logo">EL-<span>MOHTARIF</span> <b>المحترف</b></div>
   <div style="font-size:12px;background:#00ff8822;color:#00ff88;padding:6px 10px;border-radius:20px">● LIVE • 60 درس</div>
@@ -82,10 +62,10 @@ code{background:#000;padding:4px 10px;border-radius:8px;color:#00e5ff;direction:
 
 <div class="hero">
   <div class="hero-card">
-    <div class="hello" id="hello">👋 أهلاً بيك يا محترف</div>
-    <h1>أهلاً بيك في <span>أكاديمية المحترف</span><br>للأمن السيبراني</h1>
+    <div class="hello">👋 أهلاً بيك في أكاديمية المحترف</div>
+    <h1>ابدأ رحلتك في <span>عالم الهاكرز الأخلاقيين</span><br>من الصفر للاحتراف</h1>
     <p>أنا <b>المحترف</b>، ذكاء اصطناعي اتبنى مخصوص عشان يعلمك السايبر صح. مش هديك كلام نظري ممل، هديك <b style="color:#00e5ff">هجوم حقيقي في لاب آمن + دفاع حقيقي + شغل حقيقي بفلوس.</b> 60 درس • 6 مسارات • 90 يوم • من أول مرة تفتح Kali لحد أول 1000 دولار من Bug Bounty.</p>
-    <div class="ai-box"><b style="color:#a855f7">🤖 رسالة من المحترف ليك:</b><br>يا <span id="nameInMsg" style="color:#00e5ff;font-weight:900">محترف</span>، أنا هكون معاك خطوة بخطوة. كل درس فيه شرح موسع + مثال + سكربت + تحدي + سؤال وجواب + زرار اشرحلي أكتر. خلص درس، علم عليه، وأنا هتابع تقدمك. الوحوش اتولدت هنا.</div>
+    <div class="ai-box"><b style="color:#a855f7">🤖 رسالة من المحترف ليك:</b><br>يا <span style="color:#00e5ff;font-weight:900">محترف</span>، أنا هكون معاك خطوة بخطوة. كل درس فيه شرح موسع + مثال + سكربت + تحدي + سؤال وجواب + زرار اشرحلي أكتر. خلص درس، علم عليه، وأنا هتابع تقدمك. الوحوش اتولدت هنا.</div>
     <div class="grid">
       <div class="g"><b>60</b><span>درس موسع</span></div>
       <div class="g"><b>6</b><span>مسارات</span></div>
@@ -98,7 +78,6 @@ code{background:#000;padding:4px 10px;border-radius:8px;color:#00e5ff;direction:
 
 <div class="controls">
   <input id="search" placeholder="🔍 دور على أي درس... مثلا: واي فاي، SQL، واتساب">
-  <button onclick="changeName()" style="background:#0f172a;border:1px solid #334155;color:#fff;padding:0 16px;border-radius:14px;cursor:pointer">✏️ غير اسمي</button>
 </div>
 
 <div class="filters" id="filters"></div>
@@ -108,7 +87,7 @@ code{background:#000;padding:4px 10px;border-radius:8px;color:#00e5ff;direction:
 
 <script>
 /* ============================================================
-   1) البيانات أولاً (EXTRA + D) — لازم يكونوا قبل أي render
+   1) البيانات أولاً (EXTRA + D)
    ============================================================ */
 const EXTRA = {
 1:"🎬 قصة حقيقية: شركة اتسرقت بـ 2 مليون دولار لان هاكر قعد 3 شهور يجمع معلومات بس، وبعت ايميل باسم مدير الشركة. الدرس: الهاك مش بيبدأ بالكود، بيبدأ بالمعلومة.",
@@ -241,7 +220,6 @@ const D=[
    ============================================================ */
 let CAT = 'الكل';
 let Q = '';
-let myName = localStorage.getItem('mohtarif_name') || '';
 let done = JSON.parse(localStorage.getItem('done') || '[]');
 let openDeep = new Set(JSON.parse(localStorage.getItem('openDeep') || '[]'));
 
@@ -258,37 +236,7 @@ function escapeHTML(s){
 }
 
 /* ============================================================
-   4) الاسم
-   ============================================================ */
-function applyName(){
-  const n = myName || 'محترف';
-  document.getElementById('hello').innerText = '👋 أهلاً بيك يا ' + n + ' في أكاديمية المحترف';
-  document.getElementById('nameInMsg').innerText = n;
-  if (myName) document.getElementById('welcome').style.display = 'none';
-}
-
-function startMe(){
-  const v = document.getElementById('nameInput').value.trim();
-  if (!v){ alert('اكتب اسمك الأول يا محترف 😎'); return; }
-  if (v.length > 30){ alert('الاسم طويل أوي، خليه 30 حرف بالكتير'); return; }
-  myName = v;
-  localStorage.setItem('mohtarif_name', myName);
-  applyName();
-  render();
-}
-
-function changeName(){
-  const v = prompt('اكتب اسمك الجديد:', myName);
-  if (v && v.trim()){
-    myName = v.trim().slice(0, 30);
-    localStorage.setItem('mohtarif_name', myName);
-    applyName();
-    render();
-  }
-}
-
-/* ============================================================
-   5) الفلاتر والبحث
+   4) الفلاتر والبحث
    ============================================================ */
 const cats = ['الكل','عقل الوحش','المواقع','الشبكات','الموبايل','AI','الشركات'];
 
@@ -313,7 +261,7 @@ document.getElementById('search').addEventListener('input', e => {
 });
 
 /* ============================================================
-   6) التقدم
+   5) التقدم
    ============================================================ */
 function toggle(n){
   if (done.includes(n)) done = done.filter(x => x !== n);
@@ -346,7 +294,7 @@ function resetProgress(){
 }
 
 function exportProgress(){
-  const data = { name: myName, done, date: new Date().toISOString() };
+  const data = { done, date: new Date().toISOString() };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -356,7 +304,7 @@ function exportProgress(){
 }
 
 /* ============================================================
-   7) الرسم
+   6) الرسم
    ============================================================ */
 function render(){
   const q = Q.trim().toLowerCase();
@@ -402,7 +350,7 @@ function render(){
 }
 
 /* ============================================================
-   8) أزرار إضافية
+   7) أزرار إضافية
    ============================================================ */
 function addExtraControls(){
   const controls = document.querySelector('.controls');
@@ -435,10 +383,9 @@ function addExtraControls(){
 }
 
 /* ============================================================
-   9) التهيئة
+   8) التهيئة
    ============================================================ */
 function init(){
-  applyName();
   renderFilters();
   addExtraControls();
   render();
@@ -447,4 +394,4 @@ function init(){
 init();
 </script>
 </body>
-                               </html>
+  </html>
