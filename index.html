@@ -8,7 +8,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',Tahoma}
 body{background:#020617;color:#e2e8f0}
-body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 10% 0%,#00e5ff22 0%,transparent 35%),radial-gradient(circle at 90% 10%,#a855f722 0%,transparent 35%);pointer-events:none}
+body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 10% 0%,#00e5ff22 0%,transparent 35%),radial-gradient(circle at 90% 10%,#a855f722 0%,transparent 35%);pointer-events:none;z-index:-1}
 .top{position:sticky;top:0;z-index:20;background:rgba(2,6,23,.9);backdrop-filter:blur(14px);border-bottom:1px solid #1e293b;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-family:Orbitron;font-weight:700}
 .logo span{color:#00e5ff}
@@ -86,9 +86,6 @@ code{background:#000;padding:4px 10px;border-radius:8px;color:#00e5ff;direction:
 <div class="footer">© 2026 <b style="color:#00e5ff">EL-MOHTARIF - المحترف</b><br>اتعلم صح • احمي الناس • اكسب قانوني 🛡️</div>
 
 <script>
-/* ============================================================
-   1) البيانات أولاً (EXTRA + D)
-   ============================================================ */
 const EXTRA = {
 1:"🎬 قصة حقيقية: شركة اتسرقت بـ 2 مليون دولار لان هاكر قعد 3 شهور يجمع معلومات بس، وبعت ايميل باسم مدير الشركة. الدرس: الهاك مش بيبدأ بالكود، بيبدأ بالمعلومة.",
 2:"🎬 صورة واحدة على انستجرام فيها لوحة محل جنب البيت، هاكر جاب منها عنوان البيت ورقم الشخص. انت بتنشر معلومات من غير ما تحس. بص على الصورة زي المحقق.",
@@ -152,7 +149,7 @@ const EXTRA = {
 60:"🎬 خطة 90 يوم: اول 30 يوم تدريب، تاني 30 يوم مشاريع، تالت 30 يوم قدم على شغل واعرض خدماتك. ابدأ دلوقتي، مش بكرة."
 };
 
-const D=[
+const D = [
 [1,"عقل الوحش","Recon - جمع المعلومات","الفكرة: الهاكر المحترف بيقضي 70% من وقته في جمع معلومات قبل اي هجوم. هتجمع: مين صاحب الموقع، فين السيرفر، ايه التكنولوجيا، ايه الايميلات، ايه الصفحات المخفية. الخطوات: 1) دور في جوجل بـ site:target.com 2) شوف whois و DNS 3) جرب Shodan 4) جمع الايميلات من لينكد ان. الادوات: Nmap, Shodan, theHarvester. غلطة المبتدئين: بيجري يهاجم من غير معلومات فيتكشف بسرعة. المكسب: تقرير Recon بيتباع للشركات.","site:target.com filetype:pdf | whois target.com","nmap -sV -A target.com","اعمل ملف Recon لموقع وهمي فيه 20 معلومة","هل ده اختراق؟ لا، معلومات عامة قانوني. اهم اداة؟ Nmap + Shodan"],
 [2,"عقل الوحش","OSINT - تعرف كل حاجة","الفكرة: OSINT يعني تجمع معلومات من مصادر مفتوحة: انستجرام وفيسبوك ولينكد ان وصور. من صورة واحدة ممكن تعرف مكان الشخص وشغله وصحابه. الخطوات: 1) دور بالاسم والصورة 2) جرب Sherlock 3) حلل الصورة: الخلفية واللوحات و EXIF 4) راقب الاصدقاء. الادوات: Sherlock, Maltego, ExifTool. غلطة المبتدئين: بيصدق اول معلومة من غير تأكيد. المكسب: تقارير التحقيقات بتتباع.","دور بالاسم + الصورة | Sherlock username","sherlock username","اعمل تقرير OSINT فيه 15 معلومة مؤكدة","قانوني؟ اه لو منشور للعامة. احمي نفسي؟ حسابك خاص واقفل Location"],
 [3,"عقل الوحش","الهندسة الاجتماعية - اخطر سلاح","الفكرة: 90% من الاختراقات بالكلام مش بالكود. الهاكر بيتصل بيك يقولك انا من البنك وتديله الباسورد بنفسك. انواعها: Phishing ايميل مزيف، Vishing مكالمة، Pretexting قصة وهمية. خطوات الهاكر: 1) يجمع معلومات 2) يبني ثقة 3) يخلق استعجال: حسابك هيتقفل 4) يطلب الكود. حمايتك: عمرك ما تبعت كود لحد، اتصل بالبنك بنفسك.","ايميل: حسابك هيتقفل | مكالمة: انا من الدعم اديني الكود","-","اكتب 3 سيناريوهات هجوم وازاي كشفتها","البنك بيطلب الكود؟ عمره ما بيطلب. الدعم بيطلب باسورد؟ مستحيل"],
@@ -215,9 +212,6 @@ const D=[
 [60,"الشركات","الخطة بعد الكورس - شغل وفلوس","الفكرة: خطة 90 يوم: اول 30 يوم تدريب + تاني 30 يوم مشاريع + تالت 30 يوم شغل وفلوس. ابدأ دلوقتي. الخطوات: 1) اعمل CV 2) قدم على 20 وظيفة 3) اعرض خدماتك 4) اعمل محتوى. غلطة المبتدئين: بيخلص الكورس ويقعد يستنى الشغل ييجي. الشغل مش بييجي، انت اللي بتروحله.","اعمل CV | قدم على 20 وظيفة","-","اعمل خطة 90 يوم بتاعتك وابدأ النهاردة","ابدأ امتى؟ دلوقتي"]
 ];
 
-/* ============================================================
-   2) الحالة والتخزين
-   ============================================================ */
 let CAT = 'الكل';
 let Q = '';
 let done = JSON.parse(localStorage.getItem('done') || '[]');
@@ -226,18 +220,12 @@ let openDeep = new Set(JSON.parse(localStorage.getItem('openDeep') || '[]'));
 function saveDone(){ localStorage.setItem('done', JSON.stringify(done)); }
 function saveDeep(){ localStorage.setItem('openDeep', JSON.stringify([...openDeep])); }
 
-/* ============================================================
-   3) أدوات مساعدة
-   ============================================================ */
 function escapeHTML(s){
   return String(s).replace(/[&<>"']/g, c => ({
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   })[c]);
 }
 
-/* ============================================================
-   4) الفلاتر والبحث
-   ============================================================ */
 const cats = ['الكل','عقل الوحش','المواقع','الشبكات','الموبايل','AI','الشركات'];
 
 function renderFilters(){
@@ -260,9 +248,6 @@ document.getElementById('search').addEventListener('input', e => {
   searchTimer = setTimeout(() => { Q = val; render(); }, 150);
 });
 
-/* ============================================================
-   5) التقدم
-   ============================================================ */
 function toggle(n){
   if (done.includes(n)) done = done.filter(x => x !== n);
   else done.push(n);
@@ -303,9 +288,6 @@ function exportProgress(){
   URL.revokeObjectURL(a.href);
 }
 
-/* ============================================================
-   6) الرسم
-   ============================================================ */
 function render(){
   const q = Q.trim().toLowerCase();
   const list = D.filter(x => {
@@ -349,9 +331,6 @@ function render(){
   }).join('');
 }
 
-/* ============================================================
-   7) أزرار إضافية
-   ============================================================ */
 function addExtraControls(){
   const controls = document.querySelector('.controls');
 
@@ -382,9 +361,6 @@ function addExtraControls(){
   });
 }
 
-/* ============================================================
-   8) التهيئة
-   ============================================================ */
 function init(){
   renderFilters();
   addExtraControls();
@@ -394,4 +370,4 @@ function init(){
 init();
 </script>
 </body>
-  </html>
+    </html>
